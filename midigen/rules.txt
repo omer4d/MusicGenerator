@@ -1,0 +1,11 @@
+Rule 1
+------
+Don't end on E
+Don't end on D (worse!)
+
+Makes melody sounds unfinished.
+
+Rule 2
+------
+Don't start bar with D-C. It implies emphasis on second beat.
+Don't start bar with E?

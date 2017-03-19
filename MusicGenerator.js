@@ -15,6 +15,18 @@
         var sixteenths = [1, 2, 3, 4, 6, 8, 12, 16];
         var values = [16, 8, 8, 4, 4, 2, 2, 1];
         var augs = [false, false, true, false, true, false, true, false];
+		
+		//var sixteenths = [1, 2, 4, 8, 16];
+        //var values = [16, 8, 4, 2, 1];
+        //var augs = [false, false, false, false, false];
+		
+		//var sixteenths = [4, 8];
+        //var values = [4, 2];
+        //var augs = [false, false, false, false, false];
+		
+		//var sixteenths = [4];
+        //var values = [4];
+		//var augs = [false, false, false, false, false];
 
         var total = timeSig[0] * (16 / timeSig[1]);
         var out = [];
@@ -31,6 +43,7 @@
             total -= sixteenths[idx];
         }
 
+		console.log(total);
         return out;
     }
 

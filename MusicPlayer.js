@@ -51,6 +51,12 @@
         this.lastBarEndTime = time;
     }
 
+	MusicPlayer.prototype.restart = function() {
+		this.queue = [];
+        this.time = 0;
+        this.lastBarEndTime = 0;
+	}
+	
     MusicPlayer.prototype.tick = function(dt) {
         var queue = this.queue;
         var time = this.time;
@@ -65,7 +71,9 @@
         //      }
         //  }
 
-        for (var i = queue.length - 1; i >= 0; --i) {
+		
+		var i = 0;
+        while(i < queue.length) {
 
             if (queue[i].time <= time) {
                 if (queue[i].type === "noteOn") {
@@ -73,7 +81,9 @@
                 } else if (queue[i].type === "noteOff")
                     this.synth.noteOff(queue[i].noteNum);
                 queue.splice(i, 1);
-            }
+            }else {
+				++i;
+			}
         }
 
         this.time += dt;
